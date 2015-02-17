@@ -1,0 +1,10 @@
+runtime: ruby21
+
+env:
+  HTTP_PORT: "${HTTP_PORT:-8080}"
+
+run: exec shotgun --server=thin --port=8000 config.ru
+
+run_web: exec unicorn -c config/unicorn.rb -E "${ROCK_ENV}"
+
+test: echo "ok"

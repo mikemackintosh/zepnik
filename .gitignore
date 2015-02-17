@@ -1,0 +1,5 @@
+/vendor/
+/.bundle/
+/db/*.db
+/db/*.yaml
+/config/devices.yaml
