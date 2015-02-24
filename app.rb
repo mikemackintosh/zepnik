@@ -39,13 +39,11 @@ module ::PROJECTNAME::
       set :config, YAML::load(File.open(config_file))[::PROJECTNAME::::Base.environment.to_s]
     end
     
-    File.exist?(
-    # Read the Database Configs
-    db_config_file = ENV['::UPPERPROJECTNAME::_DATABASE_CONFIG'] || File.join(File.dirname(__FILE__), 'config', 'databases.yaml')
     
     # Make sure the config exists
+    db_config_file = ENV['::UPPERPROJECTNAME::_DATABASE_CONFIG'] || File.join(File.dirname(__FILE__), 'config', 'databases.yaml')
     if File.exist?(db_config_file)
-    db_config = YAML::load(File.open(db_config_file))[::PROJECTNAME::::Base.environment.to_s]
+      db_config = YAML::load(File.open(db_config_file))[::PROJECTNAME::::Base.environment.to_s]
       # Create the database connection
       ActiveRecord::Base.establish_connection(db_config)
       set :config, YAML::load(File.open(config_file))[::PROJECTNAME::::Base.environment.to_s]
