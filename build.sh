@@ -12,8 +12,8 @@ echo "Creating project: ${project} with env of ${uproject}"
 
 # Delete the .git dir
 rm -rf .git/ .bundle/ vendor/
-LC_ALL=C find . -type f -not -path "./vendor" -not -path "./.bundle/" -exec sed -i ''  "s/HackersAndHipsters/${project}/g" {} \;
-LC_ALL=C find . -type f -not -path "./vendor" -not -path "./.bundle/" -exec sed -i ''  "s/HackersAndHipsters/${project}/g" {} \;
+LC_ALL=C find . -type f -not -path "./vendor" -not -path "./build.sh" -not -path "./.bundle/" -exec sed -i '' "s/::PROJECTNAME::/${project}/g" {} \;
+LC_ALL=C find . -type f -not -path "./vendor" -not -path "./build.sh" -not -path "./.bundle/" -exec sed -i '' "s/::UPPERNAME::/${uproject}/g" {} \;
 
 # Create git remote
 git init
