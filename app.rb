@@ -41,7 +41,7 @@ module ::PROJECTNAME::
     
     
     # Make sure the config exists
-    db_config_file = ENV['::UPPERPROJECTNAME::_DATABASE_CONFIG'] || File.join(File.dirname(__FILE__), 'config', 'databases.yaml')
+    db_config_file = ENV['::UPPERNAME::_DATABASE_CONFIG'] || File.join(File.dirname(__FILE__), 'config', 'databases.yaml')
     if File.exist?(db_config_file)
       db_config = YAML::load(File.open(db_config_file))[::PROJECTNAME::::Base.environment.to_s]
       # Create the database connection
