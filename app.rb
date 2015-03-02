@@ -46,7 +46,6 @@ module ::PROJECTNAME::
       db_config = YAML::load(File.open(db_config_file))[::PROJECTNAME::::Base.environment.to_s]
       # Create the database connection
       ActiveRecord::Base.establish_connection(db_config)
-      set :config, YAML::load(File.open(config_file))[::PROJECTNAME::::Base.environment.to_s]
     end
 
     configure :development do
