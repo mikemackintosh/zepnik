@@ -1,6 +1,6 @@
 module ::PROJECTNAME::
   class Web
-    module Routing
+    module Default
       def self.registered(app)
         
         # Parent Route
