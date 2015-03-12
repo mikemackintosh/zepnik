@@ -69,8 +69,13 @@ module ::PROJECTNAME::
                            :expire_after => 3600,
                            :secret => 'CHANGE ME!!'
 
-    register ::PROJECTNAME::::Web::Routing
+    # This is the default route
+    register ::PROJECTNAME::::Web::Default
 
+    # Not Found, show :404
+    not_found do
+      erb :"404"
+    end
   end
 
   require_relative './routes/worker/init'
