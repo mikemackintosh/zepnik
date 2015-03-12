@@ -26,6 +26,7 @@ module ::PROJECTNAME::
 
     set :environments, %w{development test production}
     set :root, File.dirname(__FILE__)
+    set(:is_env) {|value| condition{value == settings.environment}}
 
     # Add Helpers
     helpers do
