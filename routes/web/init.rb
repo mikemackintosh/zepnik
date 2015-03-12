@@ -1,1 +1,1 @@
-require_relative 'routing'
+require_relative 'default'
